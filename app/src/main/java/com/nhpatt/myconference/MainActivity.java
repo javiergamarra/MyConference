@@ -20,6 +20,20 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	@Override
+	protected void onStart() {
+		super.onStart();
+
+		Log.e(MY_TAG, "I'm starting");
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		Log.e(MY_TAG, "I'm resuming");
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.menu_main, menu);
