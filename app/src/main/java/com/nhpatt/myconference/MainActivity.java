@@ -1,10 +1,11 @@
 package com.nhpatt.myconference;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,6 +18,13 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 		Log.e(MY_TAG, "I'm paranoid");
+
+		findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Log.e(MY_TAG, "saving...");
+			}
+		});
 	}
 
 	@Override
