@@ -1,5 +1,7 @@
 package com.nhpatt.myconference;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -64,7 +66,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == R.id.save_button) {
+		if (v.getId() == R.id.web_page) {
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.nhpatt.com")));
+		} else if (v.getId() == R.id.save_button) {
 			Log.e(MY_TAG, "saving...");
 		}
 
