@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,6 +19,8 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 		Log.e(MY_TAG, "I'm paranoid");
+
+		Toast.makeText(this, "Hi!", Toast.LENGTH_SHORT).show();
 
 		findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
 			@Override
