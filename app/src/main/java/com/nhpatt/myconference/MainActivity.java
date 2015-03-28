@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
 
 	private static final String MY_TAG = "MY_CONFERENCE";
 
@@ -22,12 +22,8 @@ public class MainActivity extends ActionBarActivity {
 
 		Toast.makeText(this, "Hi!", Toast.LENGTH_SHORT).show();
 
-		findViewById(R.id.save_button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Log.e(MY_TAG, "saving...");
-			}
-		});
+		findViewById(R.id.save_button).setOnClickListener(this);
+		findViewById(R.id.web_page).setOnClickListener(this);
 	}
 
 	@Override
@@ -64,5 +60,13 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		if (v.getId() == R.id.save_button) {
+			Log.e(MY_TAG, "saving...");
+		}
+
 	}
 }
