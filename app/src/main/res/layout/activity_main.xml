@@ -25,13 +25,15 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 
-		<Button android:id="@+id/web_page"
+		<Button
+			android:id="@+id/web_page"
 			android:padding="10dp"
 			android:text="Web Page"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"/>
 
-		<Button android:id="@+id/to_second"
+		<Button
+			android:id="@+id/to_second"
 			android:padding="10dp"
 			android:text="To second"
 			android:layout_width="wrap_content"
@@ -51,6 +53,7 @@
 			android:layout_height="wrap_content"/>
 
 		<Button
+			android:id="@+id/cancel"
 			android:text="Cancel"
 			android:layout_toRightOf="@id/save_button"
 			android:layout_alignParentBottom="true"

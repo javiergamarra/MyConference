@@ -27,6 +27,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		findViewById(R.id.save_button).setOnClickListener(this);
 		findViewById(R.id.web_page).setOnClickListener(this);
 		findViewById(R.id.to_second).setOnClickListener(this);
+		findViewById(R.id.cancel).setOnClickListener(this);
 	}
 
 	@Override
@@ -73,6 +74,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 			Log.e(MY_TAG, "saving...");
 		} else if (v.getId() == R.id.to_second) {
 			startActivity(new Intent(this, SecondActivity.class));
+		} else {
+			finish();
 		}
 
 	}
