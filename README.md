@@ -1,3 +1,3 @@
 # MyConference
 
-Example app for Android @burgos
+Example application to teach Android @burgos
