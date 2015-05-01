@@ -8,8 +8,54 @@ import java.util.Date;
  */
 public class Talk implements Serializable {
 
-    private Date inicio;
-    private Date fin;
-
+    private Date start;
+    private Date end;
+    private String room;
+    private String title;
     private String speaker;
+
+    public Talk(String title, String room) {
+        this.title = title;
+        this.room = room;
+    }
+
+    public Date getStart() {
+        return start;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public Date getEnd() {
+        return end;
+    }
+
+    public void setEnd(Date end) {
+        this.end = end;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getSpeaker() {
+        return speaker;
+    }
+
+    public void setSpeaker(String speaker) {
+        this.speaker = speaker;
+    }
 }
