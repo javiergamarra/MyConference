@@ -2,19 +2,24 @@ package com.nhpatt.myconference;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.nhpatt.myconference.entities.Talk;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * @author Javier Gamarra
- */
 public class DashboardActivity extends Activity {
+
+    private DrawerLayout drawerLayout;
+    private ListView drawerList;
+    private String[] menus = new String[]{"uno", "dos",};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,23 @@ public class DashboardActivity extends Activity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerList = (ListView) findViewById(R.id.left_drawer);
+        drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, menus));
+        drawerList.setOnItemClickListener(new DrawerItemClickListener());
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    private void selectItem(int position) {
+        drawerList.setItemChecked(position, true);
+        setTitle(menus[position]);
+        drawerLayout.closeDrawer(drawerList);
     }
 
 }
