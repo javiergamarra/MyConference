@@ -1,6 +1,7 @@
 package com.nhpatt.myconference.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.nhpatt.myconference.R;
+import com.nhpatt.myconference.SettingsActivity;
 import com.nhpatt.myconference.entities.Talk;
 
 import java.util.ArrayList;
@@ -53,6 +55,7 @@ public class AgendaActivity extends Activity {
         drawerList.setItemChecked(position, true);
         setTitle(menus[position]);
         drawerLayout.closeDrawer(drawerList);
+        startActivity(new Intent(this, SettingsActivity.class));
     }
 
 }
