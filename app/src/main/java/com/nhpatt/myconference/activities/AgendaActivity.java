@@ -9,11 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.nhpatt.myconference.R;
 import com.nhpatt.myconference.SettingsActivity;
 import com.nhpatt.myconference.entities.Talk;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,10 @@ public class AgendaActivity extends Activity {
         drawerList = (ListView) findViewById(R.id.left_drawer);
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, menus));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+
+        ImageView avatar = (ImageView) findViewById(R.id.avatar);
+        Picasso.with(this).load("https://pbs.twimg.com/profile_images/1210256780/avatar.jpg").into(avatar);
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {

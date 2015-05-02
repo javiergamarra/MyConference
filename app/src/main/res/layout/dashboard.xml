@@ -17,15 +17,25 @@
 
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/left_drawer"
+    <RelativeLayout
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@android:color/white"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp" />
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ListView
+            android:id="@+id/left_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/avatar"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
+    </RelativeLayout>
 </android.support.v4.widget.DrawerLayout>
 
 
