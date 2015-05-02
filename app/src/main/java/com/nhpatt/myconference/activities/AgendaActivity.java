@@ -1,4 +1,4 @@
-package com.nhpatt.myconference;
+package com.nhpatt.myconference.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,12 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.nhpatt.myconference.R;
 import com.nhpatt.myconference.entities.Talk;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboardActivity extends Activity {
+public class AgendaActivity extends Activity {
 
     private DrawerLayout drawerLayout;
     private ListView drawerList;
