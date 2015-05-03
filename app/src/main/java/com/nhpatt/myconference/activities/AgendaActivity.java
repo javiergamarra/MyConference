@@ -94,8 +94,6 @@ public class AgendaActivity extends Activity {
         setTitle(menus[position]);
         drawerLayout.closeDrawer(drawerList);
         startActivity(new Intent(this, SettingsActivity.class));
-
-//        http://private-5d28cf-talks.apiary-mock.com/questions
     }
 
 }
