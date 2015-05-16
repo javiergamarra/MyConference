@@ -57,8 +57,6 @@ public class AgendaActivity extends Activity {
     }
 
     private void findTalks() {
-
-
         TalksUseCase talksUseCase = new TalksUseCase();
         talksUseCase.alternativeRun();
     }
