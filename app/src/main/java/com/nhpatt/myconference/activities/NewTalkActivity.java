@@ -1,4 +1,4 @@
-package com.nhpatt.myconference;
+package com.nhpatt.myconference.activities;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.nhpatt.myconference.R;
 
 
 public class NewTalkActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {

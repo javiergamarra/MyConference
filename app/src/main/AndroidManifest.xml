@@ -20,11 +20,11 @@
         </activity>
         <activity android:name=".activities.DetailActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
-            android:name=".NewTalkActivity"
+            android:name=".activities.NewTalkActivity"
             android:label="@string/title_activity_new_talk" >
         </activity>
     </application>
