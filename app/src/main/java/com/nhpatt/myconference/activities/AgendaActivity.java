@@ -11,14 +11,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.nhpatt.myconference.R;
 import com.nhpatt.myconference.entities.Talk;
+import com.nhpatt.myconference.entities.TalkResponse;
 import com.nhpatt.myconference.usecases.TalksUseCase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 public class AgendaActivity extends Activity {
 
@@ -73,4 +77,20 @@ public class AgendaActivity extends Activity {
         startActivity(new Intent(this, SettingsActivity.class));
     }
 
+    public void onEventMainThread(TalkResponse response) {
+        Toast.makeText(this, response.getTalks().toString(), Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        EventBus.getDefault().unregister(this);
+    }
 }

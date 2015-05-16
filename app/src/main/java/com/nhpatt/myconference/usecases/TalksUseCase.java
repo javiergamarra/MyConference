@@ -4,10 +4,13 @@ import android.util.Log;
 
 import com.google.gson.JsonArray;
 import com.nhpatt.myconference.MyConferenceApp;
+import com.nhpatt.myconference.entities.Talk;
+import com.nhpatt.myconference.entities.TalkResponse;
 import com.nhpatt.myconference.network.TalkService;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 
+import de.greenrobot.event.EventBus;
 import retrofit.RestAdapter;
 
 /**
@@ -30,6 +33,8 @@ public class TalksUseCase extends Job {
                 restAdapter.create(TalkService.class);
         JsonArray talks = service.listTalks();
         Log.e(MyConferenceApp.TAG, talks.toString());
+
+        EventBus.getDefault().post(new TalkResponse(talks));
     }
 
     public void run() {
