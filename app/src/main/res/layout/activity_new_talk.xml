@@ -34,4 +34,11 @@
         android:text="@string/save_new_talk"
         android:textAllCaps="true" />
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.nhpatt.myconference.fragments.DetailTalkFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/save_new_talk" />
+
 </RelativeLayout>
