@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.nhpatt.myconference.R;
+import com.nhpatt.myconference.fragments.DetailTalkFragment;
 
 
 public class NewTalkActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
@@ -22,6 +23,11 @@ public class NewTalkActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_new_talk);
 
         findViewById(R.id.room).setOnClickListener(this);
+
+        getFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, new DetailTalkFragment())
+                .commit();
     }
 
     @Override
