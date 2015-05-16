@@ -15,9 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.nhpatt.myconference.R;
-import com.nhpatt.myconference.SettingsActivity;
 import com.nhpatt.myconference.entities.Talk;
 import com.nhpatt.myconference.network.TalkService;
 import com.squareup.picasso.Picasso;
@@ -92,7 +90,7 @@ public class AgendaActivity extends Activity {
     private void selectItem(int position) {
         drawerList.setItemChecked(position, true);
         setTitle(menus[position]);
-        drawerLayout.closeDrawer(drawerList);
+        drawerLayout.closeDrawer(findViewById(R.id.drawer_frame));
         startActivity(new Intent(this, SettingsActivity.class));
     }
 
