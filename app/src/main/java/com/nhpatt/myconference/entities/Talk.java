@@ -1,18 +1,24 @@
 package com.nhpatt.myconference.entities;
 
+import com.orm.SugarRecord;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author Javier Gamarra
  */
-public class Talk implements Serializable {
+public class Talk extends SugarRecord<Talk> implements Serializable {
 
-    private Date start;
-    private Date end;
+    private Date start = new Date();
+    private Date end = new Date();
     private String room;
     private String title;
     private String speaker;
+
+    public Talk() {
+
+    }
 
     public Talk(String title, String room) {
         this.title = title;
