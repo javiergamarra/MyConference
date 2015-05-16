@@ -60,7 +60,7 @@ public class AgendaActivity extends Activity {
 
 
         TalksUseCase talksUseCase = new TalksUseCase();
-        talksUseCase.run();
+        talksUseCase.alternativeRun();
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
