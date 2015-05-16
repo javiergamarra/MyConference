@@ -12,16 +12,16 @@ import com.nhpatt.myconference.R;
  */
 public class TermsActivity extends Activity implements View.OnClickListener {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.terms);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.terms);
 
-		findViewById(R.id.accept_terms).setOnClickListener(this);
-	}
+        findViewById(R.id.accept_terms).setOnClickListener(this);
+    }
 
-	@Override
-	public void onClick(View v) {
-		startActivity(new Intent(this, AgendaActivity.class));
-	}
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(this, AgendaActivity.class));
+    }
 }

@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.nhpatt.myconference.R;
-import com.nhpatt.myconference.activities.NewTalkActivity;
 
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
