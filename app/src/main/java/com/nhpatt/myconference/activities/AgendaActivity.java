@@ -6,27 +6,19 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.google.gson.JsonArray;
 import com.nhpatt.myconference.R;
 import com.nhpatt.myconference.entities.Talk;
-import com.nhpatt.myconference.network.TalkService;
+import com.nhpatt.myconference.usecases.TalksUseCase;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
 public class AgendaActivity extends Activity {
 
@@ -61,23 +53,10 @@ public class AgendaActivity extends Activity {
     }
 
     private void findTalks() {
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://private-5d28cf-talks.apiary-mock.com/")
-                .build();
 
-        TalkService service =
-                restAdapter.create(TalkService.class);
-        service.listTalks(new Callback<JsonArray>() {
-            @Override
-            public void success(JsonArray jsonObject, Response response) {
-                Toast.makeText(AgendaActivity.this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void failure(RetrofitError error) {
-                Log.e("TAG", error.toString());
-            }
-        });
+        TalksUseCase talksUseCase = new TalksUseCase();
+        talksUseCase.run();
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
