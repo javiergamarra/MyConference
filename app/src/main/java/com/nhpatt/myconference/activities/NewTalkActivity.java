@@ -23,11 +23,6 @@ public class NewTalkActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_new_talk);
 
         findViewById(R.id.room).setOnClickListener(this);
-
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container, new DetailTalkFragment())
-                .commit();
     }
 
     @Override
