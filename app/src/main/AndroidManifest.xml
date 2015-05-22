@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nhpatt.myconference">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -8,11 +7,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyConferenceApp"
+        android:name="com.nhpatt.myconference.MyConferenceApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:label="@string/app_name">
         <activity android:name=".activities.TermsActivity" />
         <activity android:name=".activities.AgendaActivity">
             <intent-filter>
@@ -28,11 +26,6 @@
         <activity
             android:name=".activities.NewTalkActivity"
             android:label="@string/title_activity_new_talk" />
-
-        <meta-data android:name="DATABASE" android:value="myconference.db" />
-        <meta-data android:name="VERSION" android:value="3" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.nhpatt.myconference" />
 
     </application>
 

@@ -7,14 +7,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/material_blue_grey_800"
+        android:background="@color/primary_dark"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/title_day_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/material_deep_teal_200"
+            android:background="@color/primary"
             android:padding="15dp"
             android:text="Lunes 19"
             android:textAllCaps="true"

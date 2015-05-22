@@ -1,5 +1,6 @@
 package com.nhpatt.myconference;
 
+import android.app.Application;
 import android.util.Log;
 
 import com.orm.SugarApp;
@@ -10,7 +11,7 @@ import com.path.android.jobqueue.log.CustomLogger;
 /**
  * @author Javier Gamarra
  */
-public class MyConferenceApp extends SugarApp {
+public class MyConferenceApp extends Application {
 
     public static final String TAG = "MyConference";
     private static MyConferenceApp instance;
