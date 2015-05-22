@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.nhpatt.myconference.R;
 import com.nhpatt.myconference.entities.Talk;
-import com.nhpatt.myconference.entities.TalkResponse;
+import com.nhpatt.myconference.entities.TalkEvent;
 import com.nhpatt.myconference.usecases.TalksUseCase;
 import com.squareup.picasso.Picasso;
 
@@ -75,7 +75,7 @@ public class AgendaActivity extends Activity {
         startActivity(new Intent(this, SettingsActivity.class));
     }
 
-    public void onEventMainThread(TalkResponse response) {
+    public void onEventMainThread(TalkEvent response) {
         Toast.makeText(this, response.getTalks().toString(), Toast.LENGTH_SHORT).show();
 
     }

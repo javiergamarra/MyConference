@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.gson.JsonArray;
 import com.nhpatt.myconference.MyConferenceApp;
 import com.nhpatt.myconference.entities.Talk;
-import com.nhpatt.myconference.entities.TalkResponse;
+import com.nhpatt.myconference.entities.TalkEvent;
 import com.nhpatt.myconference.network.TalkService;
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
@@ -46,7 +46,7 @@ public class TalksUseCase extends Job implements Runnable {
         } catch (Exception e) {
             Log.e(MyConferenceApp.TAG, "Error!", e);
         }
-        EventBus.getDefault().post(new TalkResponse(talks));
+        EventBus.getDefault().post(new TalkEvent(talks));
     }
 
     public void run() {
