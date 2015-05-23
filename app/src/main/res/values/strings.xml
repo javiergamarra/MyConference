@@ -9,5 +9,7 @@
     <string name="title_activity_new_talk">NewTalkActivity</string>
     <string name="create_new_talk">Create a new talk</string>
     <string name="save_new_talk">Save new talk</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 
 </resources>

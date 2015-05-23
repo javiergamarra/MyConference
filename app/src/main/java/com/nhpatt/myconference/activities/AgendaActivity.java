@@ -3,6 +3,7 @@ package com.nhpatt.myconference.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -47,7 +48,7 @@ public class AgendaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawerList = (ListView) findViewById(R.id.left_drawer);
+        drawerList = (ListView) findViewById(R.id.list_drawer);
         drawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, menus));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
 
@@ -59,6 +60,15 @@ public class AgendaActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
+                this, mDrawerLayout, toolbar,
+                R.string.open, R.string.close);
+        mDrawerLayout.setDrawerListener(drawerToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        drawerToggle.syncState();
+
     }
 
     @Override
@@ -82,7 +92,7 @@ public class AgendaActivity extends AppCompatActivity {
     private void selectItem(int position) {
         drawerList.setItemChecked(position, true);
         setTitle(menus[position]);
-        drawerLayout.closeDrawer(findViewById(R.id.drawer_frame));
+        drawerLayout.closeDrawer(findViewById(R.id.left_drawer));
         startActivity(new Intent(this, SettingsActivity.class));
     }
 
