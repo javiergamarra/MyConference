@@ -10,10 +10,17 @@
         android:background="@color/primary_dark"
         android:orientation="vertical">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary" />
+
         <TextView
             android:id="@+id/title_day_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
             android:background="@color/primary"
             android:padding="15dp"
             android:text="Lunes 19"

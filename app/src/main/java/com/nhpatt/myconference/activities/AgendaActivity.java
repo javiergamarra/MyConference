@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,7 +27,7 @@ import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
-public class AgendaActivity extends Activity {
+public class AgendaActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ListView drawerList;
@@ -54,6 +57,9 @@ public class AgendaActivity extends Activity {
         Picasso.with(this).load("https://pbs.twimg.com/profile_images/1210256780/avatar.jpg").into(avatar);
 
         findTalks();
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void findTalks() {
