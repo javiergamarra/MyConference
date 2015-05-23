@@ -42,6 +42,8 @@ public class AgendaActivity extends AppCompatActivity {
 
         List<Talk> talks = new ArrayList<>();
         talks.add(new Talk("Title 1", "Room 1"));
+        talks.add(new Talk("Title 2", "Room 2"));
+        talks.add(new Talk("Title 3", "Room 2"));
 
         TalksAdapter adapter = new TalksAdapter(talks);
         recyclerView.setAdapter(adapter);
