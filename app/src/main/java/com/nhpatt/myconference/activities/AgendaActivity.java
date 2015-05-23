@@ -1,6 +1,5 @@
 package com.nhpatt.myconference.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -58,7 +57,7 @@ public class AgendaActivity extends AppCompatActivity {
 
         findTalks();
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 

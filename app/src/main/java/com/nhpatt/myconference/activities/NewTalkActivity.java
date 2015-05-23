@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.nhpatt.myconference.R;
-import com.nhpatt.myconference.fragments.DetailTalkFragment;
 
 
 public class NewTalkActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {

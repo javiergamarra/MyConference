@@ -4,13 +4,9 @@ import android.util.Log;
 
 import com.google.gson.JsonArray;
 import com.nhpatt.myconference.MyConferenceApp;
-import com.nhpatt.myconference.entities.Talk;
 import com.nhpatt.myconference.entities.TalkEvent;
 import com.nhpatt.myconference.network.TalkService;
-import com.path.android.jobqueue.Job;
-import com.path.android.jobqueue.Params;
 
-import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
