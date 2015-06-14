@@ -1,6 +1,5 @@
 package com.nhpatt.myconference.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -62,11 +61,10 @@ public class AgendaActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
-                this, mDrawerLayout, toolbar,
+                this, drawerLayout, toolbar,
                 R.string.open, R.string.close);
-        mDrawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.setDrawerListener(drawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         drawerToggle.syncState();
@@ -95,7 +93,6 @@ public class AgendaActivity extends AppCompatActivity {
         drawerList.setItemChecked(position, true);
         setTitle(menus[position]);
         drawerLayout.closeDrawer(findViewById(R.id.left_drawer));
-        startActivity(new Intent(this, SettingsActivity.class));
     }
 
     public void onEventMainThread(TalkEvent response) {

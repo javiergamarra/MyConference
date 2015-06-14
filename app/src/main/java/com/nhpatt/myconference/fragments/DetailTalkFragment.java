@@ -13,6 +13,6 @@ public class DetailTalkFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.detail_talk, container, false);
+        return inflater.inflate(R.layout.detail, container, false);
     }
 }
