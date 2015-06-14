@@ -9,11 +9,11 @@
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/talk_room"
         android:layout_alignTop="@+id/talk_title"
-        android:background="@color/primary_dark"
+        android:textColor="@color/accent"
+        android:textAllCaps="true"
         android:gravity="center_vertical"
         android:padding="15dp"
         android:text="10:00"
-        android:textColor="@android:color/white"
         android:textSize="16sp" />
 
     <TextView
@@ -23,8 +23,7 @@
         android:layout_toRightOf="@+id/talk_hour"
         android:paddingBottom="0dp"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:textColor="@android:color/white" />
+        android:paddingTop="10dp" />
 
     <TextView
         android:id="@+id/talk_room"
@@ -34,8 +33,7 @@
         android:layout_toRightOf="@+id/talk_hour"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
-        android:paddingTop="0dp"
-        android:textColor="@android:color/white" />
+        android:paddingTop="0dp" />
 
     <View
         android:layout_width="match_parent"
