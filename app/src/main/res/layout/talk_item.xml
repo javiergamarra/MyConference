@@ -9,12 +9,12 @@
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/talk_room"
         android:layout_alignTop="@+id/talk_title"
-        android:textColor="@color/accent"
-        android:textAllCaps="true"
         android:gravity="center_vertical"
         android:padding="15dp"
         android:text="10:00"
-        android:textSize="16sp" />
+        android:textAllCaps="true"
+        android:textColor="@color/accent"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/talk_title"
@@ -38,6 +38,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/primary_light" />
+        android:layout_below="@+id/talk_room"
+        android:layout_margin="5dp"
+        android:background="@color/primary" />
 
 </RelativeLayout>
