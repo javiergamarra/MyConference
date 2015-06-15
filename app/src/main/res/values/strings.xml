@@ -1,15 +1,4 @@
 <resources>
-    <string name="app_name">My Conference</string>
-    <string name="title">Title</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="new_talk">New Talk</string>
-    <string name="title_activity_new_talk">NewTalkActivity</string>
-    <string name="create_new_talk">Create a new talk</string>
-    <string name="save_new_talk">Save new talk</string>
-    <string name="open">open</string>
-    <string name="close">close</string>
+    <string name="app_name">AOS 2015</string>
 
 </resources>
