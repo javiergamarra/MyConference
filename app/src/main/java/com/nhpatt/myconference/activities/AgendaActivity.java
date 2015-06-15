@@ -147,12 +147,6 @@ public class AgendaActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
     private void findTalks() {
         TalksUseCase talksUseCase = new TalksUseCase();
         talksUseCase.alternativeRun();
