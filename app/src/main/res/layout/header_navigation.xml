@@ -6,15 +6,18 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/aos2"
-        android:scaleType="centerCrop" />
+        android:scaleType="center"
+        android:src="@drawable/aos2015_logo" />
 
     <TextView
         style="@style/TextAppearance.AppCompat.Subhead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_margin="16dp"
-        android:text="Your Name Here"
-        android:textColor="@android:color/white" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/aos_2015"
+        android:textColor="?attr/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </FrameLayout>

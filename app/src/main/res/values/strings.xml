@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">AOS 2015</string>
+    <string name="agenda">Agenda</string>
+    <string name="map">Mapa</string>
+    <string name="explore">Explorar</string>
+    <string name="sponsors">Patrocinadores</string>
+    <string name="twitter">Twitter</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">Sobre el AOS</string>
+    <string name="aos_2015">AOS 2015</string>
 
 </resources>
