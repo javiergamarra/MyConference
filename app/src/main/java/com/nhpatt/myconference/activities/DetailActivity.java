@@ -12,7 +12,7 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.detail);
+        setContentView(R.layout.talk_detail);
     }
 
 

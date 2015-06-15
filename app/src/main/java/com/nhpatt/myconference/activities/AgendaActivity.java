@@ -12,11 +12,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -100,7 +98,7 @@ public class AgendaActivity extends AppCompatActivity {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment, container, false);
+            View view = inflater.inflate(R.layout.talks_list, container, false);
             RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.talks);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
             recyclerView.setLayoutManager(linearLayoutManager);
