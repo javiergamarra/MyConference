@@ -1,6 +1,7 @@
 package com.nhpatt.myconference.activities;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,18 +11,14 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.nhpatt.myconference.R;
-import com.nhpatt.myconference.entities.Talk;
 import com.nhpatt.myconference.entities.TalkEvent;
+import com.nhpatt.myconference.fragments.DayFragment;
 import com.nhpatt.myconference.usecases.TalksUseCase;
 
 import java.util.ArrayList;
@@ -74,37 +71,22 @@ public class AgendaActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new DummyFragment(getResources().getColor(R.color.accent_material_light)), "JUEVES 19");
-        adapter.addFrag(new DummyFragment(getResources().getColor(R.color.ripple_material_light)), "VIERNES 20");
+
+        DayFragment firstDayFragment = createDayFragment(R.color.accent_material_light);
+        DayFragment secondDayFragment = createDayFragment(R.color.ripple_material_light);
+
+        adapter.addFrag(firstDayFragment, "JUEVES 19");
+        adapter.addFrag(secondDayFragment, "VIERNES 20");
         viewPager.setAdapter(adapter);
     }
 
-    public class DummyFragment extends Fragment {
-        int color;
-        TalksAdapter adapter;
-
-        public DummyFragment(int color) {
-            this.color = color;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.talks_list, container, false);
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.talks);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
-            recyclerView.setLayoutManager(linearLayoutManager);
-            recyclerView.setHasFixedSize(true);
-            List<String> list = new ArrayList<String>();
-
-            List<Talk> talks = new ArrayList<>();
-            talks.add(new Talk("Title 1", "Room 1"));
-            talks.add(new Talk("asdklj askldjka sljkd jaslkdjasd 2", "Room 2"));
-            talks.add(new Talk("Title asdasd asd asd 3", "Room 2"));
-
-            adapter = new TalksAdapter(talks);
-            recyclerView.setAdapter(adapter);
-            return view;
-        }
+    @NonNull
+    private DayFragment createDayFragment(int color) {
+        DayFragment dayFragment = new DayFragment();
+        Bundle args = new Bundle();
+        args.putInt("color", getResources().getColor(color));
+        dayFragment.setArguments(args);
+        return dayFragment;
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
