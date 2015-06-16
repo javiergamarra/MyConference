@@ -1,6 +1,7 @@
 package com.nhpatt.myconference.entities;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,7 +13,9 @@ public class Talk implements Serializable {
     private Date end = new Date();
     private String room;
     private String title;
+    private String description;
     private String speaker;
+    private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
     public Talk() {
 
@@ -23,16 +26,16 @@ public class Talk implements Serializable {
         this.room = room;
     }
 
-    public Date getStart() {
-        return start;
+    public String getStart() {
+        return sdf.format(start);
     }
 
     public void setStart(Date start) {
         this.start = start;
     }
 
-    public Date getEnd() {
-        return end;
+    public String getEnd() {
+        return sdf.format(end);
     }
 
     public void setEnd(Date end) {
@@ -53,6 +56,14 @@ public class Talk implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getSpeaker() {

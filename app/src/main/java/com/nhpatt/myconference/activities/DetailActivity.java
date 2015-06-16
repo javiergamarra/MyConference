@@ -16,11 +16,25 @@ public class DetailActivity extends Activity {
 
         setContentView(R.layout.talk_detail);
 
-        Talk talk = (Talk) getIntent().getExtras().get("talk");
-
-
-        ((TextView) findViewById(R.id.title)).setText(talk.getTitle());
+        Bundle bundle = getIntent().getExtras();
+        assignTalk((Talk) bundle.get("talk"));
     }
 
+    private void assignTalk(Talk talk) {
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText(talk.getTitle());
+
+        TextView description = (TextView) findViewById(R.id.description);
+        description.setText(talk.getDescription());
+
+        TextView start = (TextView) findViewById(R.id.start);
+        start.setText(talk.getStart());
+
+        TextView end = (TextView) findViewById(R.id.end);
+        end.setText(talk.getEnd());
+
+        TextView room = (TextView) findViewById(R.id.room);
+        room.setText(talk.getRoom());
+    }
 
 }
